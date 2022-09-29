@@ -33,5 +33,22 @@ namespace Gestion_mdp.Entity
             set => utilisateur = value;
         }
 
+        private string mdp;
+
+        public string MDP
+        {
+            get => mdp;
+            set => mdp = value;
+        }
+
+
+        private DateTime createdAt;
+
+        public DateTime CreatedAt
+        {
+            get => createdAt;
+            set => createdAt = value;
+        }
+
     }
 }

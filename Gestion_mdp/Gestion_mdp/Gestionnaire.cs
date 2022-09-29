@@ -26,5 +26,23 @@ namespace Gestion_mdp
         {
 
         }
+
+        private void NewDatabase(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new();
+            sfd.FileName = "Base de données.mpm ";
+            sfd.Filter = "Fichier MPM du Gestionnaire de mot de passe | *.mpm";
+
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                var dbFile = sfd.FileName;
+                NewDatabase newDatabase = new();
+
+                if (newDatabase.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }

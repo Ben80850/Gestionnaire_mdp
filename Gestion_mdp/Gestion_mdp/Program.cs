@@ -17,7 +17,7 @@ namespace Gestion_mdp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Gestionnaire());
+            Application.Run(new Form1());
         }
     }
 }
