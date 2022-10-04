@@ -29,6 +29,7 @@ namespace Gestion_mdp
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -83,7 +84,7 @@ namespace Gestion_mdp
             // 
             this.MenuNew.Name = "MenuNew";
             this.MenuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.MenuNew.Size = new System.Drawing.Size(179, 22);
+            this.MenuNew.Size = new System.Drawing.Size(180, 22);
             this.MenuNew.Text = "Nouveau";
             this.MenuNew.Click += new System.EventHandler(this.NewDatabase);
             // 
@@ -91,28 +92,28 @@ namespace Gestion_mdp
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             this.ouvrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ouvrirToolStripMenuItem.Text = "Ouvrir";
             // 
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
             this.fermerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fermerToolStripMenuItem.Text = "Fermer";
             // 
             // sauvegarderToolStripMenuItem
             // 
             this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
             this.sauvegarderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sauvegarderToolStripMenuItem.Text = "Sauvegarder";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // entréeToolStripMenuItem
@@ -148,6 +149,10 @@ namespace Gestion_mdp
             // 
             // DtgEntries
             // 
+            this.DtgEntries.AllowUserToAddRows = false;
+            this.DtgEntries.AllowUserToDeleteRows = false;
+            this.DtgEntries.AllowUserToResizeColumns = false;
+            this.DtgEntries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DtgEntries.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DtgEntries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -155,7 +160,19 @@ namespace Gestion_mdp
             this.DtgEntries.GridColor = System.Drawing.Color.White;
             this.DtgEntries.Location = new System.Drawing.Point(0, 48);
             this.DtgEntries.Name = "DtgEntries";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgEntries.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtgEntries.RowTemplate.Height = 25;
+            this.DtgEntries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtgEntries.ShowCellToolTips = false;
+            this.DtgEntries.ShowEditingIcon = false;
+            this.DtgEntries.ShowRowErrors = false;
             this.DtgEntries.Size = new System.Drawing.Size(800, 402);
             this.DtgEntries.TabIndex = 2;
             this.DtgEntries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

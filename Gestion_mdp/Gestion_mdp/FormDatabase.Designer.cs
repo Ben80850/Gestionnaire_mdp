@@ -42,6 +42,7 @@ namespace Gestion_mdp
             // 
             // Btncancel
             // 
+            this.Btncancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Btncancel.Location = new System.Drawing.Point(308, 91);
             this.Btncancel.Name = "Btncancel";
             this.Btncancel.Size = new System.Drawing.Size(65, 23);
@@ -52,6 +53,7 @@ namespace Gestion_mdp
             // 
             // BtnOk
             // 
+            this.BtnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnOk.Location = new System.Drawing.Point(237, 91);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(65, 23);
@@ -65,7 +67,7 @@ namespace Gestion_mdp
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_mdp.Helper;
+
 
 namespace Gestion_mdp
 {
@@ -49,7 +51,16 @@ namespace Gestion_mdp
 
         private void Accept(object sender, EventArgs e)
         {
+            if(!textBox1.Text.Equals(textBox2.Text))
+            {
+                MessageBox.Show("Les mot de passe ne correspondent pas !", "Gestion-mdp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult = DialogResult.None;
 
+            }
+            else
+            {
+                ((Form1)Owner).Database.Hash = sécurité.GetHash(textBox1.Text);
+            }
         }
 
         private void TogglePassword(object sender, EventArgs e)

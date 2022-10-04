@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Gestion_mdp.Entity
     public class Entree
     {
         private string uuid;
+        [Browsable(false)]
         public string UUID
         {
             get => uuid;
@@ -34,7 +36,7 @@ namespace Gestion_mdp.Entity
         }
 
         private string mdp;
-
+        [DisplayName("Mot de passe")]
         public string MDP
         {
             get => mdp;
@@ -43,7 +45,7 @@ namespace Gestion_mdp.Entity
 
 
         private DateTime createdAt;
-
+        [DisplayName("Créer le ")]
         public DateTime CreatedAt
         {
             get => createdAt;
