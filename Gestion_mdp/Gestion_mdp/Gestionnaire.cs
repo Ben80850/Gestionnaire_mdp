@@ -24,6 +24,13 @@ namespace Gestion_mdp
             InitializeComponent();
             Database = new Database();
             configuration = new Configuration();
+
+            FormClosing += OnFormClosing;
+        }
+
+        private void OnFormClosing(object sender, FormClosingEventArgs e)
+        {
+            Confighelp.Saveconfig(configuration);
         }
 
         private void copierleNomDutilisateurToolStripMenuItem_Click(object sender, EventArgs e)
