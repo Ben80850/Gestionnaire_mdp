@@ -26,11 +26,31 @@ namespace Gestion_mdp
             configuration = new Configuration();
 
             FormClosing += OnFormClosing;
+            Load += OnFormLoad;
+
+            Shown += OnFormShown;
         }
+
+        private void OnFormShown(object sender, EventArgs e)
+        {
+           if(configuration.LastUsedFile is not null)
+            {
+                DtgEntries.DataSource = Database.Entree;
+                Text = $"Gestion_mdp - {Path.GetFullPath(configuration.LastUsedFile)}";
+
+            }
+        }
+
+        private void OnFormLoad(object sneder , EventArgs e )
+        {
+            configuration = Confighelp.LoadConfiguration();
+
+        }
+
 
         private void OnFormClosing(object sender, FormClosingEventArgs e)
         {
-            Confighelp.Saveconfig(configuration);
+            Confighelp.SaveConfig(configuration);
         }
 
         private void copierleNomDutilisateurToolStripMenuItem_Click(object sender, EventArgs e)
