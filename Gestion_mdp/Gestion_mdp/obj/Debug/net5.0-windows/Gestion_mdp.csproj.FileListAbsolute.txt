@@ -18,3 +18,5 @@ C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debu
 C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debug\net5.0-windows\ref\Men.dll
 C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debug\net5.0-windows\Men.pdb
 C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debug\net5.0-windows\Gestion_mdp.genruntimeconfig.cache
+C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debug\net5.0-windows\Gestion_mdp.OpenDatabaseForm.resources
+C:\Users\legee\OneDrive\Bureau\Gestionnaire-mdp\Gestion_mdp\Gestion_mdp\obj\Debug\net5.0-windows\Gestion_mdp.EntreeForm.resources

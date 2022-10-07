@@ -35,9 +35,14 @@ namespace Gestion_mdp
         {
            if(configuration.LastUsedFile is not null)
             {
-                DtgEntries.DataSource = Database.Entree;
-                Text = $"Gestion_mdp - {Path.GetFullPath(configuration.LastUsedFile)}";
 
+                OpenDatabaseForm openDatabaseForm = new OpenDatabaseForm(configuration.LastUsedFile);
+
+                if (openDatabaseForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    DtgEntries.DataSource = Database.Entree;
+                    Text = $"Gestion_mdp - {Path.GetFullPath(configuration.LastUsedFile)}";
+                }
             }
         }
 
@@ -85,6 +90,17 @@ namespace Gestion_mdp
 
                     Text = $"Gestion_mdp - {Path.GetFileName(dbFile)}";
                 }
+            }
+        }
+
+        private void AddEntree(object sender, EventArgs e)
+        {
+            EntreeForm entreeForm = new();
+
+            if(entreeForm.ShowDialog(this) == DialogResult.OK)
+            {
+                Database.Entree.Add(entreeForm.Entree);
+                DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
             }
         }
     }

@@ -40,7 +40,7 @@ namespace Gestion_mdp
             this.sauvegarderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entréeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterUneEntréeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEntree = new System.Windows.Forms.ToolStripMenuItem();
             this.copierLeNomDutilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copierLeMotDePasseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DtgEntries = new System.Windows.Forms.DataGridView();
@@ -84,7 +84,7 @@ namespace Gestion_mdp
             // 
             this.MenuNew.Name = "MenuNew";
             this.MenuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.MenuNew.Size = new System.Drawing.Size(180, 22);
+            this.MenuNew.Size = new System.Drawing.Size(179, 22);
             this.MenuNew.Text = "Nouveau";
             this.MenuNew.Click += new System.EventHandler(this.NewDatabase);
             // 
@@ -92,46 +92,47 @@ namespace Gestion_mdp
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             this.ouvrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.ouvrirToolStripMenuItem.Text = "Ouvrir";
             // 
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
             this.fermerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.fermerToolStripMenuItem.Text = "Fermer";
             // 
             // sauvegarderToolStripMenuItem
             // 
             this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
             this.sauvegarderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.sauvegarderToolStripMenuItem.Text = "Sauvegarder";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             this.quitterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // entréeToolStripMenuItem
             // 
             this.entréeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajouterUneEntréeToolStripMenuItem,
+            this.addEntree,
             this.copierLeNomDutilisateurToolStripMenuItem,
             this.copierLeMotDePasseToolStripMenuItem});
             this.entréeToolStripMenuItem.Name = "entréeToolStripMenuItem";
             this.entréeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.entréeToolStripMenuItem.Text = "Entrée";
             // 
-            // ajouterUneEntréeToolStripMenuItem
+            // addEntree
             // 
-            this.ajouterUneEntréeToolStripMenuItem.Name = "ajouterUneEntréeToolStripMenuItem";
-            this.ajouterUneEntréeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.ajouterUneEntréeToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.ajouterUneEntréeToolStripMenuItem.Text = "Ajouter une entrée";
+            this.addEntree.Name = "addEntree";
+            this.addEntree.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.addEntree.Size = new System.Drawing.Size(254, 22);
+            this.addEntree.Text = "Ajouter une entrée";
+            this.addEntree.Click += new System.EventHandler(this.AddEntree);
             // 
             // copierLeNomDutilisateurToolStripMenuItem
             // 
@@ -160,6 +161,7 @@ namespace Gestion_mdp
             this.DtgEntries.GridColor = System.Drawing.Color.White;
             this.DtgEntries.Location = new System.Drawing.Point(0, 48);
             this.DtgEntries.Name = "DtgEntries";
+            this.DtgEntries.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -211,7 +213,7 @@ namespace Gestion_mdp
         private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entréeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajouterUneEntréeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEntree;
         private System.Windows.Forms.ToolStripMenuItem copierLeNomDutilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copierLeMotDePasseToolStripMenuItem;
         private System.Windows.Forms.DataGridView DtgEntries;

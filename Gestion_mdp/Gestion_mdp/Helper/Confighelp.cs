@@ -13,9 +13,9 @@ namespace Gestion_mdp.Helper
     public static class Confighelp
     {
         private static readonly string configDirPath = Path.Combine(
-             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyPasswordManager");
+             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Gestionmdp");
 
-        private static readonly string configFileName = "MyPassword.config.json";
+        private static readonly string configFileName = "Gestionmdp.config.json";
         private static readonly string configFilePath = Path.Combine(configDirPath, configFileName);
 
         public static void SaveConfig(Configuration configuration)
