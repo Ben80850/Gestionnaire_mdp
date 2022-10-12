@@ -22,8 +22,8 @@ namespace Gestion_mdp
         public Form1()
         {
             InitializeComponent();
-            Database = new Database();
-            configuration = new Configuration();
+
+            Database = new();
 
             FormClosing += OnFormClosing;
             Load += OnFormLoad;
@@ -49,6 +49,11 @@ namespace Gestion_mdp
         private void OnFormLoad(object sneder , EventArgs e )
         {
             configuration = Confighelp.LoadConfiguration();
+
+            if (!File.Exists(configuration.LastUsedFile))
+            {
+                configuration.LastUsedFile = null;
+            }
 
         }
 
@@ -102,6 +107,70 @@ namespace Gestion_mdp
                 Database.Entree.Add(entreeForm.Entree);
                 DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
             }
+        }
+
+        private void OpenDatabase(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new();
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                OpenDatabaseForm openDatabaseForm = new(ofd.FileName);
+
+                if(ofd.ShowDialog(this) == DialogResult.OK)
+                {
+                    DtgEntries.DataSource = Database.Entree;
+                    Text = $"Gestion_mdp - {Path.GetFileName(ofd.FileName)}";
+                    configuration.LastUsedFile = ofd.FileName;
+                }
+            }
+        }
+
+        private void quitterMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CloseDatabase(object sender, EventArgs e)
+        {
+            Database = new();
+            DtgEntries.DataSource = null;
+            Text = "Gestion_mdp";
+            configuration.LastUsedFile = null;
+        }
+
+        private void SauvegardeDatabase(object sender, EventArgs e)
+        {
+            DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
+        }
+
+        private void MenuFileOpen(object sender, EventArgs e)
+        {
+            if (Database.Hash is not null)
+                TogglerFileMenu(isEnabled: true);
+            else
+                TogglerFileMenu(isEnabled: false);
+        }
+
+        private void Menuentrée(object sender, EventArgs e)
+        {
+            if(Database.Hash is not null)
+                ToggleEntryMenu(isEnabled: true);
+            else
+                ToggleEntryMenu(isEnabled: false);
+        }
+
+        private void TogglerFileMenu(bool isEnabled)
+        {
+            sauvegarderMenu.Enabled = isEnabled;
+            fermerMenu.Enabled = isEnabled;
+        }
+
+        private void ToggleEntryMenu(bool isEnabled)
+        {
+            entréeMenu.Enabled = isEnabled;
+            copierMenu.Enabled = isEnabled;
+            copierMdpMenu.Enabled = isEnabled;
         }
     }
 }
