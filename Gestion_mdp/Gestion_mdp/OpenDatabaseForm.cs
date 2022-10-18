@@ -67,7 +67,7 @@ namespace Gestion_mdp
 
         private void OpenDatabaseForm_Load(object sender, EventArgs e)
         {
-
+            textBox1.Select();
         }
 
         private void TooglePasswordChar(object sender, EventArgs e)

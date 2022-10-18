@@ -15,9 +15,14 @@ namespace Gestion_mdp
 {
     public partial class Form1 : Form
     {
+        private const int DTG_PASSWORD_COLUMN_INDEX = 2;
+        private const int NUMBER_OF_PASSWORD_CHAR = 8;
+
         public Database Database;
 
         private Configuration configuration;
+
+        private Entree selectionEntree;
 
         public Form1()
         {
@@ -30,10 +35,11 @@ namespace Gestion_mdp
 
             Shown += OnFormShown;
         }
+        #region Evenement Form
 
         private void OnFormShown(object sender, EventArgs e)
         {
-           if(configuration.LastUsedFile is not null)
+            if (configuration.LastUsedFile is not null)
             {
 
                 OpenDatabaseForm openDatabaseForm = new OpenDatabaseForm(configuration.LastUsedFile);
@@ -46,7 +52,7 @@ namespace Gestion_mdp
             }
         }
 
-        private void OnFormLoad(object sneder , EventArgs e )
+        private void OnFormLoad(object sneder, EventArgs e)
         {
             configuration = Confighelp.LoadConfiguration();
 
@@ -55,8 +61,10 @@ namespace Gestion_mdp
                 configuration.LastUsedFile = null;
             }
 
-        }
+        } 
+        #endregion
 
+        #region TEST
 
         private void OnFormClosing(object sender, FormClosingEventArgs e)
         {
@@ -71,15 +79,17 @@ namespace Gestion_mdp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
+        } 
+        #endregion
 
+        #region Database
         private void NewDatabase(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new();
-            sfd.FileName = "Base de données.mpm ";
+            sfd.FileName = "Base de données";
             sfd.Filter = "Fichier MPM de Gestion_mdp | *.mpm";
 
-            if(sfd.ShowDialog() == DialogResult.OK)
+            if (sfd.ShowDialog() == DialogResult.OK)
             {
                 var dbFile = sfd.FileName;
                 NewDatabase newDatabase = new();
@@ -98,26 +108,15 @@ namespace Gestion_mdp
             }
         }
 
-        private void AddEntree(object sender, EventArgs e)
-        {
-            EntreeForm entreeForm = new();
-
-            if(entreeForm.ShowDialog(this) == DialogResult.OK)
-            {
-                Database.Entree.Add(entreeForm.Entree);
-                DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
-            }
-        }
-
         private void OpenDatabase(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new();
 
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 OpenDatabaseForm openDatabaseForm = new(ofd.FileName);
 
-                if(ofd.ShowDialog(this) == DialogResult.OK)
+                if (ofd.ShowDialog(this) == DialogResult.OK)
                 {
                     DtgEntries.DataSource = Database.Entree;
                     Text = $"Gestion_mdp - {Path.GetFileName(ofd.FileName)}";
@@ -143,7 +142,21 @@ namespace Gestion_mdp
         {
             DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
         }
+        #endregion
 
+        #region Menu
+
+
+        private void AddEntree(object sender, EventArgs e)
+        {
+            EntreeForm entreeForm = new();
+
+            if (entreeForm.ShowDialog(this) == DialogResult.OK)
+            {
+                Database.Entree.Add(entreeForm.Entree);
+                DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
+            }
+        }
         private void MenuFileOpen(object sender, EventArgs e)
         {
             if (Database.Hash is not null)
@@ -154,12 +167,15 @@ namespace Gestion_mdp
 
         private void Menuentrée(object sender, EventArgs e)
         {
-            if(Database.Hash is not null)
+            if (Database.Hash is not null)
                 ToggleEntryMenu(isEnabled: true);
             else
                 ToggleEntryMenu(isEnabled: false);
         }
 
+        #endregion
+
+        #region Méthode
         private void TogglerFileMenu(bool isEnabled)
         {
             sauvegarderMenu.Enabled = isEnabled;
@@ -171,6 +187,64 @@ namespace Gestion_mdp
             entréeMenu.Enabled = isEnabled;
             copierMenu.Enabled = isEnabled;
             copierMdpMenu.Enabled = isEnabled;
+        }
+
+        #endregion
+
+        #region Copie
+
+        private void CopierUtilisateur(object sender, EventArgs e)
+        {
+            SetSelectedEntree();
+
+            if (selectionEntree != null)
+            {
+                Clipboard.SetText(selectionEntree.Utilisateur);
+            }
+        }
+
+        private void Copiemdp(object sender, EventArgs e)
+        {
+            SetSelectedEntree();
+            if (selectionEntree != null)
+            {
+                Clipboard.SetText(sécurité.Decrypt(selectionEntree.MDP, Database.Hash));
+            }
+        }
+        #endregion
+
+        private void DtgEntriesCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == DTG_PASSWORD_COLUMN_INDEX)
+            {
+                e.Value = new string('*', NUMBER_OF_PASSWORD_CHAR);
+            }
+        }
+
+        private void ModifierEntrée(object sender, EventArgs e)
+        {
+            if (DtgEntries.SelectedRows.Count == 1)
+            {
+                SetSelectedEntree();
+                EntreeForm entreeForm = new EntreeForm();
+                selectionEntree.MDP = sécurité.Decrypt(selectionEntree.MDP, Database.Hash);
+
+
+                if (entreeForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    DtgEntries.RefreshEdit();
+                    selectionEntree.MDP = sécurité.Encrypt(selectionEntree.MDP, Database.Hash);
+                    DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
+                }
+
+
+            }
+        }
+
+
+        private void SetSelectedEntree()
+        {
+            selectionEntree = (Entree)DtgEntries.CurrentRow.DataBoundItem;
         }
     }
 }

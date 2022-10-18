@@ -16,9 +16,14 @@ namespace Gestion_mdp
     {
         public Entree Entree;
     
-        public EntreeForm()
+        public EntreeForm(Entree entree = null)
         {
             InitializeComponent();
+
+            if(entree != null)
+            {
+                Entree = entree; 
+            }
         }
 
         private void Btncancel_Click(object sender, EventArgs e)
@@ -50,6 +55,16 @@ namespace Gestion_mdp
         {
             textBox3.UseSystemPasswordChar = !textBox3.UseSystemPasswordChar;
             textBox4.UseSystemPasswordChar = !textBox4.UseSystemPasswordChar;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EntreeForm_Load(object sender, EventArgs e)
+        {
+            textBox1.Select();
         }
     }
 }

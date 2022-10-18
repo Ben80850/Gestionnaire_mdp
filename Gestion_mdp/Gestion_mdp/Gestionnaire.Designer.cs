@@ -29,7 +29,8 @@ namespace Gestion_mdp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -44,8 +45,15 @@ namespace Gestion_mdp
             this.copierMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.copierMdpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.DtgEntries = new System.Windows.Forms.DataGridView();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Contextutilisateur = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenumdp = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuaddEntre = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenudelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.modiferLentréeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).BeginInit();
+            this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -146,6 +154,7 @@ namespace Gestion_mdp
             this.copierMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
             this.copierMenu.Size = new System.Drawing.Size(254, 22);
             this.copierMenu.Text = "copier le nom d\'utilisateur";
+            this.copierMenu.Click += new System.EventHandler(this.CopierUtilisateur);
             // 
             // copierMdpMenu
             // 
@@ -153,6 +162,7 @@ namespace Gestion_mdp
             this.copierMdpMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.copierMdpMenu.Size = new System.Drawing.Size(254, 22);
             this.copierMdpMenu.Text = "copier le mot de passe";
+            this.copierMdpMenu.Click += new System.EventHandler(this.Copiemdp);
             // 
             // DtgEntries
             // 
@@ -163,19 +173,20 @@ namespace Gestion_mdp
             this.DtgEntries.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DtgEntries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgEntries.ContextMenuStrip = this.contextMenu;
             this.DtgEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgEntries.GridColor = System.Drawing.Color.White;
             this.DtgEntries.Location = new System.Drawing.Point(0, 48);
             this.DtgEntries.Name = "DtgEntries";
             this.DtgEntries.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgEntries.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgEntries.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtgEntries.RowTemplate.Height = 25;
             this.DtgEntries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgEntries.ShowCellToolTips = false;
@@ -184,6 +195,51 @@ namespace Gestion_mdp
             this.DtgEntries.Size = new System.Drawing.Size(800, 402);
             this.DtgEntries.TabIndex = 2;
             this.DtgEntries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DtgEntries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DtgEntriesCellFormatting);
+            // 
+            // contextMenu
+            // 
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Contextutilisateur,
+            this.ContextMenumdp,
+            this.ContextMenuaddEntre,
+            this.ContextMenudelete,
+            this.modiferLentréeToolStripMenuItem});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(215, 136);
+            // 
+            // Contextutilisateur
+            // 
+            this.Contextutilisateur.Name = "Contextutilisateur";
+            this.Contextutilisateur.Size = new System.Drawing.Size(214, 22);
+            this.Contextutilisateur.Text = "Copier le nom d\'utilisateur";
+            this.Contextutilisateur.Click += new System.EventHandler(this.CopierUtilisateur);
+            // 
+            // ContextMenumdp
+            // 
+            this.ContextMenumdp.Name = "ContextMenumdp";
+            this.ContextMenumdp.Size = new System.Drawing.Size(214, 22);
+            this.ContextMenumdp.Text = "Copier le mot de passe";
+            this.ContextMenumdp.Click += new System.EventHandler(this.Copiemdp);
+            // 
+            // ContextMenuaddEntre
+            // 
+            this.ContextMenuaddEntre.Name = "ContextMenuaddEntre";
+            this.ContextMenuaddEntre.Size = new System.Drawing.Size(214, 22);
+            this.ContextMenuaddEntre.Text = "Ajouter une entrée";
+            // 
+            // ContextMenudelete
+            // 
+            this.ContextMenudelete.Name = "ContextMenudelete";
+            this.ContextMenudelete.Size = new System.Drawing.Size(214, 22);
+            this.ContextMenudelete.Text = "Modifer l\'entrée";
+            this.ContextMenudelete.Click += new System.EventHandler(this.ModifierEntrée);
+            // 
+            // modiferLentréeToolStripMenuItem
+            // 
+            this.modiferLentréeToolStripMenuItem.Name = "modiferLentréeToolStripMenuItem";
+            this.modiferLentréeToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.modiferLentréeToolStripMenuItem.Text = "Supprimer l\'entrée";
             // 
             // Form1
             // 
@@ -203,6 +259,7 @@ namespace Gestion_mdp
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).EndInit();
+            this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +280,12 @@ namespace Gestion_mdp
         private System.Windows.Forms.ToolStripMenuItem copierMenu;
         private System.Windows.Forms.ToolStripMenuItem copierMdpMenu;
         private System.Windows.Forms.DataGridView DtgEntries;
+        private System.Windows.Forms.ContextMenuStrip contextMenu;
+        private System.Windows.Forms.ToolStripMenuItem Contextutilisateur;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenumdp;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuaddEntre;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenudelete;
+        private System.Windows.Forms.ToolStripMenuItem modiferLentréeToolStripMenuItem;
     }
 }
 
