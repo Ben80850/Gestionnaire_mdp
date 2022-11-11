@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "z2mjpiARFJRymWKcucLPwOLKO1bVH6Q2oI8PDkfECYAXrqT8dCYzjTQ05rKBQhjoXB5MRW25kpAB4pMIKu4JOw==",
+  "dgSpecHash": "n0T4dz8oodnP8cijMurQams3v+oEEQciz5aZbYv2A79USdQTOjIqiVcaWLACEQ5Hl31A6dNOqpOJ9OhAhamd/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\legee\\OneDrive\\Bureau\\Gestionnaire-mdp\\Gestion_mdp\\Gestion_mdp\\Gestion_mdp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\legee\\OneDrive\\Bureau\\Gestionnaire_mdp\\Gestion_mdp\\Gestion_mdp\\Gestion_mdp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\legee\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\legee\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\legee\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\legee\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

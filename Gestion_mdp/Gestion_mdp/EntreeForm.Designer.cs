@@ -72,7 +72,7 @@ namespace Gestion_mdp
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.90675F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.09325F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -99,7 +99,7 @@ namespace Gestion_mdp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 15);
+            this.label1.Size = new System.Drawing.Size(114, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Titre :";
             // 
@@ -109,7 +109,7 @@ namespace Gestion_mdp
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 339);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Confirmation";
             // 
@@ -119,7 +119,7 @@ namespace Gestion_mdp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 240);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 15);
+            this.label3.Size = new System.Drawing.Size(114, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mot de passe";
             // 
@@ -129,16 +129,16 @@ namespace Gestion_mdp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 15);
+            this.label2.Size = new System.Drawing.Size(114, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nom d\'utilisateur : ";
             // 
             // btnTooglePasswordChar
             // 
             this.btnTooglePasswordChar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTooglePasswordChar.Location = new System.Drawing.Point(314, 236);
+            this.btnTooglePasswordChar.Location = new System.Drawing.Point(313, 236);
             this.btnTooglePasswordChar.Name = "btnTooglePasswordChar";
-            this.btnTooglePasswordChar.Size = new System.Drawing.Size(37, 23);
+            this.btnTooglePasswordChar.Size = new System.Drawing.Size(38, 23);
             this.btnTooglePasswordChar.TabIndex = 7;
             this.btnTooglePasswordChar.Text = "Voir";
             this.btnTooglePasswordChar.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@ namespace Gestion_mdp
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(124, 38);
+            this.textBox1.Location = new System.Drawing.Point(123, 38);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 23);
             this.textBox1.TabIndex = 0;
@@ -157,7 +157,7 @@ namespace Gestion_mdp
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(124, 137);
+            this.textBox2.Location = new System.Drawing.Point(123, 137);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(184, 23);
             this.textBox2.TabIndex = 1;
@@ -166,7 +166,7 @@ namespace Gestion_mdp
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(124, 236);
+            this.textBox3.Location = new System.Drawing.Point(123, 236);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(184, 23);
             this.textBox3.TabIndex = 2;
@@ -176,7 +176,7 @@ namespace Gestion_mdp
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(124, 335);
+            this.textBox4.Location = new System.Drawing.Point(123, 335);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(184, 23);
             this.textBox4.TabIndex = 3;
@@ -199,6 +199,7 @@ namespace Gestion_mdp
             this.Name = "EntreeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajouter une entrée";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
             this.Load += new System.EventHandler(this.EntreeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

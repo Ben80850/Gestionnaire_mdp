@@ -32,7 +32,6 @@ namespace Gestion_mdp
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fichierMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +55,6 @@ namespace Gestion_mdp
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -74,6 +65,7 @@ namespace Gestion_mdp
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip2";
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // fichierMenu
             // 
@@ -93,7 +85,7 @@ namespace Gestion_mdp
             // 
             this.MenuNew.Name = "MenuNew";
             this.MenuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.MenuNew.Size = new System.Drawing.Size(180, 22);
+            this.MenuNew.Size = new System.Drawing.Size(179, 22);
             this.MenuNew.Text = "Nouveau";
             this.MenuNew.Click += new System.EventHandler(this.NewDatabase);
             // 
@@ -101,7 +93,7 @@ namespace Gestion_mdp
             // 
             this.ouvrirMenu.Name = "ouvrirMenu";
             this.ouvrirMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ouvrirMenu.Size = new System.Drawing.Size(180, 22);
+            this.ouvrirMenu.Size = new System.Drawing.Size(179, 22);
             this.ouvrirMenu.Text = "Ouvrir";
             this.ouvrirMenu.Click += new System.EventHandler(this.OpenDatabase);
             // 
@@ -109,7 +101,7 @@ namespace Gestion_mdp
             // 
             this.fermerMenu.Name = "fermerMenu";
             this.fermerMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.fermerMenu.Size = new System.Drawing.Size(180, 22);
+            this.fermerMenu.Size = new System.Drawing.Size(179, 22);
             this.fermerMenu.Text = "Fermer";
             this.fermerMenu.Click += new System.EventHandler(this.CloseDatabase);
             // 
@@ -117,7 +109,7 @@ namespace Gestion_mdp
             // 
             this.sauvegarderMenu.Name = "sauvegarderMenu";
             this.sauvegarderMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.sauvegarderMenu.Size = new System.Drawing.Size(180, 22);
+            this.sauvegarderMenu.Size = new System.Drawing.Size(179, 22);
             this.sauvegarderMenu.Text = "Sauvegarder";
             this.sauvegarderMenu.Click += new System.EventHandler(this.SauvegardeDatabase);
             // 
@@ -125,7 +117,7 @@ namespace Gestion_mdp
             // 
             this.quitterMenu.Name = "quitterMenu";
             this.quitterMenu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitterMenu.Size = new System.Drawing.Size(180, 22);
+            this.quitterMenu.Size = new System.Drawing.Size(179, 22);
             this.quitterMenu.Text = "Quitter";
             this.quitterMenu.Click += new System.EventHandler(this.quitterMenu_Click);
             // 
@@ -176,7 +168,7 @@ namespace Gestion_mdp
             this.DtgEntries.ContextMenuStrip = this.contextMenu;
             this.DtgEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgEntries.GridColor = System.Drawing.Color.White;
-            this.DtgEntries.Location = new System.Drawing.Point(0, 48);
+            this.DtgEntries.Location = new System.Drawing.Point(0, 24);
             this.DtgEntries.Name = "DtgEntries";
             this.DtgEntries.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -192,7 +184,7 @@ namespace Gestion_mdp
             this.DtgEntries.ShowCellToolTips = false;
             this.DtgEntries.ShowEditingIcon = false;
             this.DtgEntries.ShowRowErrors = false;
-            this.DtgEntries.Size = new System.Drawing.Size(800, 402);
+            this.DtgEntries.Size = new System.Drawing.Size(800, 426);
             this.DtgEntries.TabIndex = 2;
             this.DtgEntries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.DtgEntries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DtgEntriesCellFormatting);
@@ -206,7 +198,7 @@ namespace Gestion_mdp
             this.ContextMenudelete,
             this.modiferLentréeToolStripMenuItem});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(215, 136);
+            this.contextMenu.Size = new System.Drawing.Size(215, 114);
             // 
             // Contextutilisateur
             // 
@@ -250,12 +242,11 @@ namespace Gestion_mdp
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DtgEntries);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Gestionnaire de mot de passe";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).EndInit();
@@ -266,8 +257,6 @@ namespace Gestion_mdp
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fichierMenu;
         private System.Windows.Forms.ToolStripMenuItem MenuNew;

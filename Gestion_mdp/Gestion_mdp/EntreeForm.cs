@@ -15,6 +15,7 @@ namespace Gestion_mdp
     public partial class EntreeForm : Form
     {
         public Entree Entree;
+        private Entree initentree;
     
         public EntreeForm(Entree entree = null)
         {
@@ -22,6 +23,7 @@ namespace Gestion_mdp
 
             if(entree != null)
             {
+               
                 Entree = entree; 
             }
         }
@@ -65,6 +67,26 @@ namespace Gestion_mdp
         private void EntreeForm_Load(object sender, EventArgs e)
         {
             textBox1.Select();
+
+            if(Entree != null)
+            {
+                initentree = (Entree)Entree.Clone();
+                textBox1.DataBindings.Add("Text", Entree, "Titre");
+                textBox2.DataBindings.Add("Text", Entree, "Utilisateur");
+                textBox3.DataBindings.Add("Text", Entree, "MDP");
+                textBox4.Text = textBox3.Text;
+              
+            }
+        }
+
+        private void OnFormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult == DialogResult.Cancel)
+            {
+                Entree.Titre = initentree.Titre;
+                Entree.Utilisateur = initentree.Utilisateur;
+                Entree.MDP = initentree.MDP;
+            }
         }
     }
 }

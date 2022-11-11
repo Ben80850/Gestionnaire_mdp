@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_mdp.Entity
 {
-    public class Entree
+    public class Entree: ICloneable
     {
         private string uuid;
         [Browsable(false)]
@@ -52,5 +52,9 @@ namespace Gestion_mdp.Entity
             set => createdAt = value;
         }
 
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

@@ -226,9 +226,9 @@ namespace Gestion_mdp
             if (DtgEntries.SelectedRows.Count == 1)
             {
                 SetSelectedEntree();
-                EntreeForm entreeForm = new EntreeForm();
-                selectionEntree.MDP = sécurité.Decrypt(selectionEntree.MDP, Database.Hash);
 
+                EntreeForm entreeForm = new(selectionEntree);
+                selectionEntree.MDP = sécurité.Decrypt(selectionEntree.MDP, Database.Hash);
 
                 if (entreeForm.ShowDialog(this) == DialogResult.OK)
                 {
@@ -236,8 +236,6 @@ namespace Gestion_mdp
                     selectionEntree.MDP = sécurité.Encrypt(selectionEntree.MDP, Database.Hash);
                     DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
                 }
-
-
             }
         }
 
@@ -245,6 +243,16 @@ namespace Gestion_mdp
         private void SetSelectedEntree()
         {
             selectionEntree = (Entree)DtgEntries.CurrentRow.DataBoundItem;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
