@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Text.Json.Serialization;
 
 namespace Gestion_mdp.Entity
@@ -25,12 +20,12 @@ namespace Gestion_mdp.Entity
             get => entree;
             set => entree = value;
         }
-       
+
         public Database()
         {
             entree = new BindingList<Entree>();
         }
 
-    
+
     }
 }

@@ -31,6 +31,7 @@ namespace Gestion_mdp
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fichierMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,6 @@ namespace Gestion_mdp
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip2";
-            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
             // fichierMenu
             // 
@@ -166,19 +166,27 @@ namespace Gestion_mdp
             this.DtgEntries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgEntries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgEntries.ContextMenuStrip = this.contextMenu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgEntries.DefaultCellStyle = dataGridViewCellStyle1;
             this.DtgEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DtgEntries.GridColor = System.Drawing.Color.White;
             this.DtgEntries.Location = new System.Drawing.Point(0, 24);
             this.DtgEntries.Name = "DtgEntries";
             this.DtgEntries.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgEntries.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgEntries.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DtgEntries.RowTemplate.Height = 25;
             this.DtgEntries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgEntries.ShowCellToolTips = false;
@@ -186,7 +194,6 @@ namespace Gestion_mdp
             this.DtgEntries.ShowRowErrors = false;
             this.DtgEntries.Size = new System.Drawing.Size(800, 426);
             this.DtgEntries.TabIndex = 2;
-            this.DtgEntries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.DtgEntries.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DtgEntriesCellFormatting);
             // 
             // contextMenu
@@ -198,7 +205,7 @@ namespace Gestion_mdp
             this.ContextMenudelete,
             this.modiferLentréeToolStripMenuItem});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(215, 114);
+            this.contextMenu.Size = new System.Drawing.Size(215, 136);
             // 
             // Contextutilisateur
             // 
@@ -232,6 +239,7 @@ namespace Gestion_mdp
             this.modiferLentréeToolStripMenuItem.Name = "modiferLentréeToolStripMenuItem";
             this.modiferLentréeToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.modiferLentréeToolStripMenuItem.Text = "Supprimer l\'entrée";
+            this.modiferLentréeToolStripMenuItem.Click += new System.EventHandler(this.SupprimerEntree);
             // 
             // Form1
             // 
@@ -244,9 +252,9 @@ namespace Gestion_mdp
             this.Controls.Add(this.DtgEntries);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Gestionnaire de mot de passe";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgEntries)).EndInit();

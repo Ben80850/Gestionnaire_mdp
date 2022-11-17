@@ -46,7 +46,6 @@ namespace Gestion_mdp
             this.textBox1.Size = new System.Drawing.Size(187, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.UseSystemPasswordChar = true;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -57,7 +56,6 @@ namespace Gestion_mdp
             this.label1.Size = new System.Drawing.Size(120, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Mot de passe maitre :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BtnOk
             // 
@@ -79,7 +77,6 @@ namespace Gestion_mdp
             this.Btncancel.TabIndex = 6;
             this.Btncancel.Text = "Annuler";
             this.Btncancel.UseVisualStyleBackColor = true;
-            this.Btncancel.Click += new System.EventHandler(this.Btncancel_Click);
             // 
             // label2
             // 

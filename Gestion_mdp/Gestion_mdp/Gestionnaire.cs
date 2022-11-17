@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Gestion_mdp.Entity;
+﻿using Gestion_mdp.Entity;
 using Gestion_mdp.Helper;
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Gestion_mdp
 {
@@ -61,7 +55,7 @@ namespace Gestion_mdp
                 configuration.LastUsedFile = null;
             }
 
-        } 
+        }
         #endregion
 
         #region TEST
@@ -69,17 +63,17 @@ namespace Gestion_mdp
         private void OnFormClosing(object sender, FormClosingEventArgs e)
         {
             Confighelp.SaveConfig(configuration);
+
+            if (Database != null)
+            {
+                DatabaseHelper.Sauvegarde(configuration.LastUsedFile, Database);
+            }
         }
 
         private void copierleNomDutilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        } 
         #endregion
 
         #region Database
@@ -213,6 +207,9 @@ namespace Gestion_mdp
         }
         #endregion
 
+
+        #region Modification entrée
+
         private void DtgEntriesCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == DTG_PASSWORD_COLUMN_INDEX)
@@ -238,21 +235,22 @@ namespace Gestion_mdp
                 }
             }
         }
+        private void SupprimerEntree(object sender, EventArgs e)
+        {
+            SetSelectedEntree();
+            var result = MessageBox.Show($"Êtes-vous sur de vouloir supprimer l'entrée sélectionnée ?\n\n " + $"- {selectionEntree.Titre}", "Gestion_mdp",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
+            if (result == DialogResult.OK)
+            {
+                Database.Entree.Remove(selectionEntree);
+            }
+        }
 
         private void SetSelectedEntree()
         {
             selectionEntree = (Entree)DtgEntries.CurrentRow.DataBoundItem;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
     }
+    #endregion
 }

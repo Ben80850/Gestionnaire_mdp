@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gestion_mdp.Entity
 {
-    public class Entree: ICloneable
+    public class Entree : ICloneable
     {
         private string uuid;
         [Browsable(false)]

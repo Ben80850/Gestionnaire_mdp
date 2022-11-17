@@ -1,13 +1,6 @@
 ﻿using Gestion_mdp.Entity;
 using Gestion_mdp.Helper;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gestion_mdp
@@ -16,15 +9,15 @@ namespace Gestion_mdp
     {
         public Entree Entree;
         private Entree initentree;
-    
+
         public EntreeForm(Entree entree = null)
         {
             InitializeComponent();
 
-            if(entree != null)
+            if (entree != null)
             {
-               
-                Entree = entree; 
+
+                Entree = entree;
             }
         }
 
@@ -59,23 +52,18 @@ namespace Gestion_mdp
             textBox4.UseSystemPasswordChar = !textBox4.UseSystemPasswordChar;
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void EntreeForm_Load(object sender, EventArgs e)
         {
             textBox1.Select();
 
-            if(Entree != null)
+            if (Entree != null)
             {
                 initentree = (Entree)Entree.Clone();
                 textBox1.DataBindings.Add("Text", Entree, "Titre");
                 textBox2.DataBindings.Add("Text", Entree, "Utilisateur");
                 textBox3.DataBindings.Add("Text", Entree, "MDP");
                 textBox4.Text = textBox3.Text;
-              
+
             }
         }
 

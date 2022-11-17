@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Gestion_mdp.Entity;
+﻿using Gestion_mdp.Entity;
 using Gestion_mdp.Helper;
+using System;
+using System.IO;
+using System.Text.Json;
+using System.Windows.Forms;
 
 namespace Gestion_mdp
 {
@@ -26,16 +19,6 @@ namespace Gestion_mdp
             this.dbFile = dbFile;
 
             Text += $" - {Path.GetFileName(dbFile)}";
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Accept(object sender, EventArgs e)
@@ -54,15 +37,10 @@ namespace Gestion_mdp
             }
             else
             {
-                MessageBox.Show("Le mot de passe est invalide ! ","GestionMdp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Le mot de passe est invalide ! ", "GestionMdp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox1.Clear();
                 DialogResult = DialogResult.None;
             }
-        }
-
-        private void Btncancel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void OpenDatabaseForm_Load(object sender, EventArgs e)

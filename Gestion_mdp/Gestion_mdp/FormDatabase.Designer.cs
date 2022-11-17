@@ -89,7 +89,6 @@ namespace Gestion_mdp
             this.textBox1.Size = new System.Drawing.Size(159, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.UseSystemPasswordChar = true;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -99,7 +98,6 @@ namespace Gestion_mdp
             this.textBox2.Size = new System.Drawing.Size(159, 23);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -110,7 +108,6 @@ namespace Gestion_mdp
             this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Confirmation  :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -121,7 +118,6 @@ namespace Gestion_mdp
             this.label1.Size = new System.Drawing.Size(159, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mot de passe maitre :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnTooglePasswordChar
             // 
@@ -149,7 +145,6 @@ namespace Gestion_mdp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Tag = "Créer un mot de passe maitre";
             this.Text = "Créer un mot de passe maitre";
-            this.Load += new System.EventHandler(this.Créerunmotdepassemaitre_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

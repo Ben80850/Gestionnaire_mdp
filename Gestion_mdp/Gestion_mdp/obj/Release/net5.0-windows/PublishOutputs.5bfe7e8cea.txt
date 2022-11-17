@@ -1,0 +1,5 @@
+C:\Users\legee\OneDrive\Bureau\Gestionnaire_mdp\Gestion_mdp\Gestion_mdp\bin\Release\net5.0-windows\publish\Gestionnaire de mot de passe.exe
+C:\Users\legee\OneDrive\Bureau\Gestionnaire_mdp\Gestion_mdp\Gestion_mdp\bin\Release\net5.0-windows\publish\Gestionnaire de mot de passe.dll
+C:\Users\legee\OneDrive\Bureau\Gestionnaire_mdp\Gestion_mdp\Gestion_mdp\bin\Release\net5.0-windows\publish\Gestionnaire de mot de passe.deps.json
+C:\Users\legee\OneDrive\Bureau\Gestionnaire_mdp\Gestion_mdp\Gestion_mdp\bin\Release\net5.0-windows\publish\Gestionnaire de mot de passe.runtimeconfig.json
+C:\Users\legee\OneDrive\Bureau\Gestionnaire_mdp\Gestion_mdp\Gestion_mdp\bin\Release\net5.0-windows\publish\Gestionnaire de mot de passe.pdb

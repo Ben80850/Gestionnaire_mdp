@@ -72,7 +72,7 @@ namespace Gestion_mdp
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.90675F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.09325F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -91,7 +91,6 @@ namespace Gestion_mdp
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(354, 397);
             this.tableLayoutPanel1.TabIndex = 11;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
@@ -136,9 +135,9 @@ namespace Gestion_mdp
             // btnTooglePasswordChar
             // 
             this.btnTooglePasswordChar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTooglePasswordChar.Location = new System.Drawing.Point(313, 236);
+            this.btnTooglePasswordChar.Location = new System.Drawing.Point(312, 236);
             this.btnTooglePasswordChar.Name = "btnTooglePasswordChar";
-            this.btnTooglePasswordChar.Size = new System.Drawing.Size(38, 23);
+            this.btnTooglePasswordChar.Size = new System.Drawing.Size(39, 23);
             this.btnTooglePasswordChar.TabIndex = 7;
             this.btnTooglePasswordChar.Text = "Voir";
             this.btnTooglePasswordChar.UseVisualStyleBackColor = true;
@@ -150,7 +149,7 @@ namespace Gestion_mdp
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(123, 38);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 23);
+            this.textBox1.Size = new System.Drawing.Size(183, 23);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
@@ -159,7 +158,7 @@ namespace Gestion_mdp
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Location = new System.Drawing.Point(123, 137);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 23);
+            this.textBox2.Size = new System.Drawing.Size(183, 23);
             this.textBox2.TabIndex = 1;
             // 
             // textBox3
@@ -168,7 +167,7 @@ namespace Gestion_mdp
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Location = new System.Drawing.Point(123, 236);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(184, 23);
+            this.textBox3.Size = new System.Drawing.Size(183, 23);
             this.textBox3.TabIndex = 2;
             this.textBox3.UseSystemPasswordChar = true;
             // 
@@ -178,7 +177,7 @@ namespace Gestion_mdp
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Location = new System.Drawing.Point(123, 335);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(184, 23);
+            this.textBox4.Size = new System.Drawing.Size(183, 23);
             this.textBox4.TabIndex = 3;
             this.textBox4.UseSystemPasswordChar = true;
             // 

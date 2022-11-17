@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Men/1.0.0": {
+      "Gestionnaire de mot de passe/1.0.0": {
         "runtime": {
-          "Men.dll": {}
+          "Gestionnaire de mot de passe.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Men/1.0.0": {
+    "Gestionnaire de mot de passe/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
